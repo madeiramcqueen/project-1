@@ -1,6 +1,10 @@
-CAT CONCENTRATION PSEUDOCODE
+# CAT CONCENTRATION
 
-# FUNCTIONS
+## WIREFRAME
+
+![wireframe](https://user-images.githubusercontent.com/16273320/195711751-6599be42-e809-497a-aeaf-10589a6c954a.jpg)
+
+### FUNCTIONS
 
 '''js
     - Render to start the game
@@ -21,6 +25,8 @@ CAT CONCENTRATION PSEUDOCODE
     - Matching Cards function: When cards match, cards cannot be flipped over or clicked again
         function cardsMatch() {
         code here
+        
+        make new audio element of Kiki meowing
         }
     
     - Flip Back Over function: When cards do not match, cards flip over again, ready to be clicked again
@@ -30,13 +36,20 @@ CAT CONCENTRATION PSEUDOCODE
     - Winner --> player wins if they match all cards under the clicking max
         function winner() {
         code here
+        
+        make new audio element of clapping
         }
+        
+      
    
     - Loser --> player loses if they do not match all cards within the clicking max
         function loser() {
         code here
+        
+        make new audio element of "aww" sound
         }
         
+      
     - Play again
         function playAgain() {
         code here
