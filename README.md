@@ -1,9 +1,9 @@
 # CAT CONCENTRATION
 
-## WIREFRAME & ABOUT GAME
+## ABOUT GAME & WIREFRAME
 Game: Concentration
 
-I'm doing the classic concentration/memory game but it is a cat specific game. Because I love cats, the player will be trying to find matching pairs of cats. When they find a pair, they'll be in for a little treat -- they'll hear an audio sound of my cat, Kiki, meowing. There might even be a hiss here and there if you don't find a match!
+I'm doing the classic concentration/memory game but it is cat specific. Because I love cats, the player will be trying to find matching pairs of cats. When they find a pair, they'll be in for a little treat -- they'll hear an audio sound of my cat, Kiki, meowing. There might even be a hiss here and there if a match is not found! If a player can find all matching cards under the click count limit, then they will win. If a player cannot find all matching cards within that click count limit, then they lose. If they want to play again, they can click the "Play again" button and give it another try!
 
 ![wireframe](https://user-images.githubusercontent.com/16273320/195711751-6599be42-e809-497a-aeaf-10589a6c954a.jpg)
 
