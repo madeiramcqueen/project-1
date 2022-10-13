@@ -1,12 +1,16 @@
 # CAT CONCENTRATION
 
-## WIREFRAME
+## WIREFRAME & ABOUT GAME
+Game: Concentration
+
+I'm doing the classic concentration/memory game but it is a cat specific game. Because I love cats, the player will be trying to find matching pairs of cats. When they find a pair, they'll be in for a little treat -- they'll hear an audio sound of my cat, Kiki, meowing. There might even be a hiss here and there if you don't find a match!
 
 ![wireframe](https://user-images.githubusercontent.com/16273320/195711751-6599be42-e809-497a-aeaf-10589a6c954a.jpg)
 
 ### FUNCTIONS
 
-'''js
+```js
+
     - Render to start the game
         function renderGame() {
         code here 
@@ -26,7 +30,7 @@
         function cardsMatch() {
         code here
         
-        make new audio element of Kiki meowing
+        set a new audio element to Kiki meowing
         }
     
     - Flip Back Over function: When cards do not match, cards flip over again, ready to be clicked again
@@ -37,16 +41,14 @@
         function winner() {
         code here
         
-        make new audio element of clapping
+        set a new audio element to clapping
         }
         
-      
-   
     - Loser --> player loses if they do not match all cards within the clicking max
         function loser() {
         code here
         
-        make new audio element of "aww" sound
+        set a new audio element to a hissing cat sound
         }
         
       
@@ -55,11 +57,5 @@
         code here
         }
     
-    - Audio of "meow" sound when winner finds a match
-    
-    - Audio of "clapping" when player wins (can go inside the winning function)
-    
-    - Audio of "awww" when player loses (can go inside the losing function)
-    
-    '''js
+    ```js
     
