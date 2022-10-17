@@ -19,3 +19,7 @@ body {
 .card-back {
     background-color: lavender;
 }
+
+.card-front {
+    background-color: aquamarine;
+}

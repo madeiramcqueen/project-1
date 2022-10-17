@@ -5,27 +5,35 @@ clickCount = 0
 // Card is an array of card divs, representing the game-board
 const cards = document.querySelectorAll('.card')
 
+// VARIABLES
+const catByCards = ['a', 'a', 'b', 'b', 'c', 'c', 'd',
+    'd', 'e', 'e', 'f', 'f']
+
 // FUNCTIONS
 
 function renderGame() {
     //code here
 }
 
-const onClick = function(event) {
-    console.log(event.target)
+const onClick = function (event) {
+    const card = event.target
+    //console.log cat on card
+    console.log(catByCards[card.innerText])
     //flip the card
-    flipCardUp(event.target)
-    //ard is flipped for 2 seconds
-    setTimeout(flipCardBack, 2000, event.target)
+    flipCardUp(card)
+    //card is flipped for 2 seconds
+    setTimeout(flipCardBack, 2000, card)
 }
 
 const flipCardUp = function (card) {
     card.classList.remove('card-back')
+    card.classList.add('card-front')
 
 }
-//flip the card back over NOT WORKING
+//flip the card back over
 const flipCardBack = function (card) {
     card.classList.add('card-back')
+    card.classList.remove('card-front')
 }
 
 function clickCount() {
