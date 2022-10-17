@@ -17,6 +17,7 @@ function onClick() {
 
 function clickCount() {
     return clickCount++
+    console.log(clickCount)
 }
 
 function cardsMatch() {
