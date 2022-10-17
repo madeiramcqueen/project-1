@@ -7,6 +7,10 @@ let firstCatCard = null
 // SELECTED ELEMENTS
 // Card is an array of card divs, representing the game-board
 const cards = document.querySelectorAll('.card')
+const playAgain = document.getElementById('play-again')
+
+let clicksButton = document.getElementById('clicksButton')
+let clickButtonCount = 0
 
 // VARIABLES
 const catByCards = ['a', 'a', 'b', 'b', 'c', 'c', 'd',
@@ -65,15 +69,18 @@ const flipCardBack = function (card) {
     card.classList.remove('card-front')
 }
 
+ //count the clicks
+ clickCount++
+
 // EVENT LISTENERS
 cards.forEach(function (card) {
     card.addEventListener('click', onClick)
 })
 
-function clickCount() {
-    return clickCount++
-    console.log(clickCount)
-}
+clicksButton.innerText = 'Click-Count: ' + clickCount
+
+
+
 /* STILL NEED TO DO
 - audio for matching cards
 - audio for non-matching cards
