@@ -1,7 +1,7 @@
 // clickCount counts the player's amount of clicks
 clickCount = 0
 
-//firstCatCard is the div of the first card clicked (initialized as undefined)
+//firstCatCard is the div of the first card clicked (initialized as null)
 let firstCatCard = null
 
 // SELECTED ELEMENTS
@@ -39,11 +39,15 @@ const onClick = function (event) {
         //check to see if the cards are a match
         if (firstCat === secondCat) {
             //if they match do nothing
+            console.log('the cards match!')
+            //set meow audio
         } else {
             //turn both over if not a match
             //card is flipped for 2 seconds
             setTimeout(flipCardBack, 2000, card)
             setTimeout(flipCardBack, 2000, firstCatCard)
+            console.log('cards do not match')
+            //set hiss audio
         }
         //initialize firstCatCard as null again
         firstCatCard = null
@@ -61,20 +65,20 @@ const flipCardBack = function (card) {
     card.classList.remove('card-front')
 }
 
+// EVENT LISTENERS
+cards.forEach(function (card) {
+    card.addEventListener('click', onClick)
+})
+
 function clickCount() {
     return clickCount++
     console.log(clickCount)
 }
-
-function cardsMatch() {
-    //code here
-    //add meow audio
-}
-
-function doNotMatch() {
-    //code here
-    //add hissing audio element
-}
+/* STILL NEED TO DO
+- audio for matching cards
+- audio for non-matching cards
+- audio for winning game
+- audio for losing game
 
 function winner() {
     //code here
@@ -90,8 +94,4 @@ function loser() {
 function playAgain() {
     //code here
 }
-
-// EVENT LISTENERS
-cards.forEach(function (card) {
-    card.addEventListener('click', onClick)
-})
+*/
