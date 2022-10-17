@@ -1,6 +1,9 @@
 // clickCount counts the player's amount of clicks
 clickCount = 0
 
+//firstCatCard is the div of the first card clicked (initialized as undefined)
+let firstCatCard = null
+
 // SELECTED ELEMENTS
 // Card is an array of card divs, representing the game-board
 const cards = document.querySelectorAll('.card')
@@ -21,8 +24,30 @@ const onClick = function (event) {
     console.log(catByCards[card.innerText])
     //flip the card
     flipCardUp(card)
-    //card is flipped for 2 seconds
-    setTimeout(flipCardBack, 2000, card)
+
+    //check to see if it's first card case
+    if (firstCatCard === null) {
+        //FIRST CARD CASE
+        firstCatCard = card
+        console.log('first card case!')
+
+    } else {
+        //SECOND CARD CASE
+        const firstCat = catByCards[firstCatCard.innerText]
+        const secondCat = catByCards[card.innerText]
+        console.log('second card case!', firstCat, secondCat)
+        //check to see if the cards are a match
+        if (firstCat === secondCat) {
+            //if they match do nothing
+        } else {
+            //turn both over if not a match
+            //card is flipped for 2 seconds
+            setTimeout(flipCardBack, 2000, card)
+            setTimeout(flipCardBack, 2000, firstCatCard)
+        }
+        //initialize firstCatCard as null again
+        firstCatCard = null
+    }
 }
 
 const flipCardUp = function (card) {
