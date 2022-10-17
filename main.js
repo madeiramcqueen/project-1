@@ -10,7 +10,6 @@ const cards = document.querySelectorAll('.card')
 const playAgain = document.getElementById('play-again')
 
 let clicksButton = document.getElementById('clicksButton')
-let clickButtonCount = 0
 
 // VARIABLES
 const catByCards = ['a', 'a', 'b', 'b', 'c', 'c', 'd',
@@ -28,6 +27,10 @@ const onClick = function (event) {
     console.log(catByCards[card.innerText])
     //flip the card
     flipCardUp(card)
+
+    //count the clicks
+    clickCount = clickCount + 1
+    document.getElementById('clicksButton').innerText = 'Click Count: ' + clickCount
 
     //check to see if it's first card case
     if (firstCatCard === null) {
@@ -69,15 +72,12 @@ const flipCardBack = function (card) {
     card.classList.remove('card-front')
 }
 
- //count the clicks
- clickCount++
-
 // EVENT LISTENERS
 cards.forEach(function (card) {
     card.addEventListener('click', onClick)
 })
 
-clicksButton.innerText = 'Click-Count: ' + clickCount
+clicksButton.innerHTML = 'Click-Count: ' + clickCount
 
 
 
