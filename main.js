@@ -9,8 +9,6 @@ let firstCatCard = null
 const cards = document.querySelectorAll('.card')
 const playAgain = document.getElementById('play-again')
 
-let clicksButton = document.getElementById('clicksButton')
-
 // VARIABLES
 const catByCards = ['a', 'a', 'b', 'b', 'c', 'c', 'd',
     'd', 'e', 'e', 'f', 'f']
@@ -32,7 +30,7 @@ const onClick = function (event) {
     clickCount = clickCount + 1
     document.getElementById('clicksButton').innerText = 'Click Count: ' + clickCount
 
-    //check to see if it's first card case
+    //check to see if it's the first card case
     if (firstCatCard === null) {
         //FIRST CARD CASE
         firstCatCard = card
@@ -42,7 +40,7 @@ const onClick = function (event) {
         //SECOND CARD CASE
         const firstCat = catByCards[firstCatCard.innerText]
         const secondCat = catByCards[card.innerText]
-        console.log('second card case!', firstCat, secondCat)
+
         //check to see if the cards are a match
         if (firstCat === secondCat) {
             //if they match do nothing
@@ -50,7 +48,6 @@ const onClick = function (event) {
             //set meow audio
         } else {
             //turn both over if not a match
-            //card is flipped for 2 seconds
             setTimeout(flipCardBack, 2000, card)
             setTimeout(flipCardBack, 2000, firstCatCard)
             console.log('cards do not match')
@@ -76,10 +73,6 @@ const flipCardBack = function (card) {
 cards.forEach(function (card) {
     card.addEventListener('click', onClick)
 })
-
-clicksButton.innerHTML = 'Click-Count: ' + clickCount
-
-
 
 /* STILL NEED TO DO
 - audio for matching cards
