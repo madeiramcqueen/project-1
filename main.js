@@ -11,8 +11,21 @@ function renderGame() {
     //code here
 }
 
-function onClick() {
-    console.log('card has been clicked!')
+const onClick = function(event) {
+    console.log(event.target)
+    //flip the card
+    flipCardUp(event.target)
+    //ard is flipped for 2 seconds
+    setTimeout(flipCardBack, 2000, event.target)
+}
+
+const flipCardUp = function (card) {
+    card.classList.remove('card-back')
+
+}
+//flip the card back over NOT WORKING
+const flipCardBack = function (card) {
+    card.classList.add('card-back')
 }
 
 function clickCount() {
@@ -25,7 +38,7 @@ function cardsMatch() {
     //add meow audio
 }
 
-function flipOver() {
+function doNotMatch() {
     //code here
     //add hissing audio element
 }
