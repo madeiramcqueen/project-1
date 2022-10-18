@@ -61,6 +61,10 @@ const onClick = function (event) {
         }
         //initialize firstCatCard as null again
         firstCatCard = null
+
+        if (clickCount > 15) {
+            alert('Sorry! Try again!')
+        }
     }
 }
 
