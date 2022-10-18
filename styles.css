@@ -20,62 +20,32 @@ ul {
     border: 1px solid black;
 }
 
-.bengalImage {
+.bengal {
     background-image: url(images/bengal.png);
     background-size: cover;
 }
 
-.bombayImage {
+.bombay {
     background-image: url(images/bombay.png);
     background-size: cover;
 }
 
-.burmeseImage {
+.burmese {
     background-image: url(images/burmese.png);
     background-size: cover;
 }
 
-.cyprusImage {
+.cyprus {
     background-image: url(images/cyprus.png);
     background-size: cover;
 }
 
-.rexImage {
+.rex {
     background-image: url(images/rex.png);
     background-size: cover;
 }
 
-.siameseImage {
-    background-image: url(images/siamese.png);
-    background-size: cover;
-}
-
-.burmese2 {
-    background-image: url(images/burmese.png);
-    background-size: cover;
-}
-
-.bombay2 {
-    background-image: url(images/bombay.png);
-    background-size: cover;
-}
-
-.cyprus2 {
-    background-image: url(images/cyprus.png);
-    background-size: cover;
-}
-
-.bengal2 {
-    background-image: url(images/bengal.png);
-    background-size: cover;
-}
-
-.rex2 {
-    background-image: url(images/rex.png);
-    background-size: cover;
-}
-
-.siamese2 {
+.siamese {
     background-image: url(images/siamese.png);
     background-size: cover;
 }

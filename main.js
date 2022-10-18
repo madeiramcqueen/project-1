@@ -10,8 +10,8 @@ const cards = document.querySelectorAll('.card')
 const playAgain = document.getElementById('play-again')
 
 // VARIABLES
-const catByCards = ['a', 'a', 'b', 'b', 'c', 'c', 'd',
-    'd', 'e', 'e', 'f', 'f']
+const catByCards = ['bengal', 'bombay', 'burmese', 'cyprus', 'rex', 'siamese', 'burmese',
+    'bombay', 'cyprus', 'bengal', 'rex', 'siamese']
 
 const matchingAudio = new Audio('audio/cardMatchMeow.mp3')
 const noMatchAudio = new Audio('audio/noMatchAww.mp3')
