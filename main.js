@@ -5,13 +5,11 @@ clickCount = 0
 let firstCatCard = null
 
 // SELECTED ELEMENTS
-// Card is an array of card divs, representing the game-board
+// Cards is an array of card divs, representing the game-board
 const cards = document.querySelectorAll('.card')
 const playAgainButton = document.getElementById('play-again')
 
-// VARIABLES
-
-//catCards dictionary
+//catCards dictionary, the key is the card id and the value is the cat
 const catCards = {
     card0: 'bengal',
     card1: 'bombay',
@@ -27,19 +25,17 @@ const catCards = {
     card11: 'siamese'
 }
 
+// AUDIO
 const matchingAudio = new Audio('audio/cardMatchMeow.mp3')
 const noMatchAudio = new Audio('audio/noMatchAww.mp3')
 
 // FUNCTIONS
-
 function renderGame() {
     //code here
 }
 
 const onClick = function (event) {
     const card = event.target
-    //console.log cat on card
-    console.log(card.id)
     //flip the card
     flipCardUp(card)
 
@@ -60,7 +56,6 @@ const onClick = function (event) {
         //check to see if the cards are a match
         if (firstCat === secondCat) {
             //if they match do nothing
-            console.log('the cards match!')
             //set match audio
             matchingAudio.play()
 
@@ -68,14 +63,13 @@ const onClick = function (event) {
             //turn both over if not a match
             setTimeout(flipCardBack, 1000, card)
             setTimeout(flipCardBack, 1000, firstCatCard)
-            console.log('cards do not match')
             //set noMatch audio
             noMatchAudio.play()
         }
         //initialize firstCatCard as null again
         firstCatCard = null
 
-        if (clickCount > 15) {
+        if (clickCount >= 15) {
             alert('Sorry! Try again!')
         }
     }
@@ -92,6 +86,7 @@ const flipCardBack = function (card) {
 //restart game when the Play Again button is clicked
 const playAgain = function () {
     clickCount = 0
+    document.getElementById('clicksButton').innerText = 'Click Count: '
     firstCatCard = 0
     flipCardBack(document.getElementById('card0'))
     flipCardBack(document.getElementById('card1'))
@@ -105,18 +100,7 @@ const playAgain = function () {
     flipCardBack(document.getElementById('card9'))
     flipCardBack(document.getElementById('card10'))
     flipCardBack(document.getElementById('card11'))
-    //reset classes for each div
-
-    //reset cards to card-back paw image (classListadd. method)
-
-
 }
-
-
-//reset classes for each div
-
-//reset cards to card-back paw image (classListadd. method)
-
 
 // EVENT LISTENERS
 cards.forEach(function (card) {
@@ -132,15 +116,6 @@ function winner() {
     //add winner audio element
 
 }
-
-function loser() {
-    //code here
-    //add loser audio element
-}
-
-array.forEach(function(item){
-
-})
 
 function shuffleCards () {
     //code here
