@@ -7,9 +7,10 @@ let firstCatCard = null
 // SELECTED ELEMENTS
 // Card is an array of card divs, representing the game-board
 const cards = document.querySelectorAll('.card')
-const playAgain = document.getElementById('play-again')
+const playAgainButton = document.getElementById('play-again')
 
 // VARIABLES
+
 //catCards dictionary
 const catCards = {
     card0: 'bengal',
@@ -25,7 +26,6 @@ const catCards = {
     card10: 'rex',
     card11: 'siamese'
 }
-console.log(catCards.card0)
 
 const matchingAudio = new Audio('audio/cardMatchMeow.mp3')
 const noMatchAudio = new Audio('audio/noMatchAww.mp3')
@@ -80,28 +80,52 @@ const onClick = function (event) {
         }
     }
 }
-
+//flip the card facing up
 const flipCardUp = function (card) {
     card.classList.remove('card-back')
-    // card.classList.add('card-front')
-
 }
+
 //flip the card back over
 const flipCardBack = function (card) {
     card.classList.add('card-back')
-    // card.classList.remove('card-front')
 }
+//restart game when the Play Again button is clicked
+const playAgain = function () {
+    clickCount = 0
+    firstCatCard = 0
+    flipCardBack(document.getElementById('card0'))
+    flipCardBack(document.getElementById('card1'))
+    flipCardBack(document.getElementById('card2'))
+    flipCardBack(document.getElementById('card3'))
+    flipCardBack(document.getElementById('card4'))
+    flipCardBack(document.getElementById('card5'))
+    flipCardBack(document.getElementById('card6'))
+    flipCardBack(document.getElementById('card7'))
+    flipCardBack(document.getElementById('card8'))
+    flipCardBack(document.getElementById('card9'))
+    flipCardBack(document.getElementById('card10'))
+    flipCardBack(document.getElementById('card11'))
+    //reset classes for each div
+
+    //reset cards to card-back paw image (classListadd. method)
+
+
+}
+
+
+//reset classes for each div
+
+//reset cards to card-back paw image (classListadd. method)
+
 
 // EVENT LISTENERS
 cards.forEach(function (card) {
     card.addEventListener('click', onClick)
 })
 
-/* STILL NEED TO DO
-- audio for matching cards
-- audio for non-matching cards
-- audio for winning game
-- audio for losing game
+playAgainButton.addEventListener('click', playAgain)
+
+/*STILL NEED TO
 
 function winner() {
     //code here
@@ -114,7 +138,15 @@ function loser() {
     //add loser audio element
 }
 
-function playAgain() {
+array.forEach(function(item){
+
+})
+
+function shuffleCards () {
     //code here
+    .random shuffling, shuffle catCards
+    - remove cat class from all cards
+    - shuffle cat cards
+    - add new cat class to all cards
 }
 */
