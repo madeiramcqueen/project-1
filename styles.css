@@ -20,6 +20,67 @@ ul {
     border: 1px solid black;
 }
 
+.bengalImage {
+    background-image: url(images/bengal.png);
+    background-size: cover;
+
+}
+
+.bombayImage {
+    background-image: url(images/bombay.png);
+    background-size: cover;
+}
+
+.burmeseImage {
+    background-image: url(images/burmese.png);
+    background-size: cover;
+}
+
+.cyprusImage {
+    background-image: url(images/cyprus.png);
+    background-size: cover;
+}
+
+.rexImage {
+    background-image: url(images/rex.png);
+    background-size: cover;
+}
+
+.siameseImage {
+    background-image: url(images/siamese.png);
+    background-size: cover;
+}
+
+.burmese2 {
+    background-image: url(images/burmese.png);
+    background-size: cover;
+}
+
+.bombay2 {
+    background-image: url(images/bombay.png);
+    background-size: cover;
+}
+
+.cyrpus2 {
+    background-image: url(images/cyprus.png);
+    background-size: cover;
+}
+
+.bengal2 {
+    background-image: url(images/bengal.png);
+    background-size: cover;
+}
+
+.rex2 {
+    background-image: url(images/rex.png);
+    background-size: cover;
+}
+
+.siamese2 {
+    background-image: url(images/siamese.png);
+    background-size: cover;
+}
+
 .card-back {
     background-color: lavender;
     background-image: url(images/paw.png);
