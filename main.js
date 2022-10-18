@@ -10,8 +10,22 @@ const cards = document.querySelectorAll('.card')
 const playAgain = document.getElementById('play-again')
 
 // VARIABLES
-const catByCards = ['bengal', 'bombay', 'burmese', 'cyprus', 'rex', 'siamese', 'burmese',
-    'bombay', 'cyprus', 'bengal', 'rex', 'siamese']
+//catCards dictionary
+const catCards = {
+    card0: 'bengal',
+    card1: 'bombay',
+    card2: 'burmese',
+    card3: 'cyprus',
+    card4: 'rex',
+    card5: 'siamese',
+    card6: 'burmese',
+    card7: 'bombay',
+    card8: 'cyprus',
+    card9: 'bengal',
+    card10: 'rex',
+    card11: 'siamese'
+}
+console.log(catCards.card0)
 
 const matchingAudio = new Audio('audio/cardMatchMeow.mp3')
 const noMatchAudio = new Audio('audio/noMatchAww.mp3')
@@ -25,7 +39,7 @@ function renderGame() {
 const onClick = function (event) {
     const card = event.target
     //console.log cat on card
-    console.log(catByCards[card.innerText])
+    console.log(card.id)
     //flip the card
     flipCardUp(card)
 
@@ -37,12 +51,11 @@ const onClick = function (event) {
     if (firstCatCard === null) {
         //FIRST CARD CASE
         firstCatCard = card
-        console.log('first card case!')
 
     } else {
         //SECOND CARD CASE
-        const firstCat = catByCards[firstCatCard.innerText]
-        const secondCat = catByCards[card.innerText]
+        const firstCat = catCards[firstCatCard.id]
+        const secondCat = catCards[card.id]
 
         //check to see if the cards are a match
         if (firstCat === secondCat) {
@@ -53,8 +66,8 @@ const onClick = function (event) {
 
         } else {
             //turn both over if not a match
-            setTimeout(flipCardBack, 2000, card)
-            setTimeout(flipCardBack, 2000, firstCatCard)
+            setTimeout(flipCardBack, 1000, card)
+            setTimeout(flipCardBack, 1000, firstCatCard)
             console.log('cards do not match')
             //set noMatch audio
             noMatchAudio.play()
@@ -70,13 +83,13 @@ const onClick = function (event) {
 
 const flipCardUp = function (card) {
     card.classList.remove('card-back')
-   // card.classList.add('card-front')
+    // card.classList.add('card-front')
 
 }
 //flip the card back over
 const flipCardBack = function (card) {
     card.classList.add('card-back')
-   // card.classList.remove('card-front')
+    // card.classList.remove('card-front')
 }
 
 // EVENT LISTENERS
