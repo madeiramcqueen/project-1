@@ -23,7 +23,6 @@ ul {
 .bengalImage {
     background-image: url(images/bengal.png);
     background-size: cover;
-
 }
 
 .bombayImage {
@@ -61,7 +60,7 @@ ul {
     background-size: cover;
 }
 
-.cyrpus2 {
+.cyprus2 {
     background-image: url(images/cyprus.png);
     background-size: cover;
 }
@@ -82,10 +81,8 @@ ul {
 }
 
 .card-back {
-    background-color: lavender;
     background-image: url(images/paw.png);
     background-size: cover;
-
 }
 
 .card-front {

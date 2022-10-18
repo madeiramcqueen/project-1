@@ -13,8 +13,8 @@ const playAgain = document.getElementById('play-again')
 const catByCards = ['a', 'a', 'b', 'b', 'c', 'c', 'd',
     'd', 'e', 'e', 'f', 'f']
 
-const meowAudio = new Audio('audio/kikiMeow.mp3')
-const awwAudio = new Audio('audio/aww.mp3')
+const matchingAudio = new Audio('audio/cardMatchMeow.mp3')
+const noMatchAudio = new Audio('audio/noMatchAww.mp3')
 
 // FUNCTIONS
 
@@ -48,16 +48,16 @@ const onClick = function (event) {
         if (firstCat === secondCat) {
             //if they match do nothing
             console.log('the cards match!')
-            //set meow audio
-            meowAudio.play()
+            //set match audio
+            matchingAudio.play()
 
         } else {
             //turn both over if not a match
             setTimeout(flipCardBack, 2000, card)
             setTimeout(flipCardBack, 2000, firstCatCard)
             console.log('cards do not match')
-            //set aww audio
-            awwAudio.play()
+            //set noMatch audio
+            noMatchAudio.play()
         }
         //initialize firstCatCard as null again
         firstCatCard = null
@@ -70,13 +70,13 @@ const onClick = function (event) {
 
 const flipCardUp = function (card) {
     card.classList.remove('card-back')
-    card.classList.add('card-front')
+   // card.classList.add('card-front')
 
 }
 //flip the card back over
 const flipCardBack = function (card) {
     card.classList.add('card-back')
-    card.classList.remove('card-front')
+   // card.classList.remove('card-front')
 }
 
 // EVENT LISTENERS
