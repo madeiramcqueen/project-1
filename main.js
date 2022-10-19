@@ -69,7 +69,7 @@ function shuffleCards() {
     }
 
     //TODO shuffle cats
-    for (let i = cards.length - 1; i >1; i--) {
+    for (let i = cards.length - 1; i > 1; i--) {
         const first = i
         const second = Math.floor(Math.random() * i)
         const firstId = 'card' + first
@@ -117,7 +117,6 @@ const onClick = function (event) {
         if (firstCat === secondCat) {
             //incremement matchCount by 2
             matchCount += 2
-            console.log(matchCount)
             if (wonGame()) {
                 //TODO modify DOM
                 document.querySelector('h1').innerText = 'Woohoo! You won!'
@@ -152,6 +151,12 @@ const flipCardUp = function (card) {
 const flipCardBack = function (card) {
     card.classList.add('card-back')
 }
+
+//hide matching cards
+// const hideCard = function (card) {
+//     card.classList.remove('card-back')
+//     card.classList.remove(catCards[card.id])
+// }
 //restart game when the Play Again button is clicked
 const playAgain = function () {
     clickCount = 0

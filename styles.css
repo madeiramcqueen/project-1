@@ -16,6 +16,10 @@ ul {
     grid-template-rows: 200px 200px 200px;
 }
 
+.hide {
+    display: none;
+}
+
 .card {
     border: 10px solid black;
 }
