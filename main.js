@@ -1,6 +1,9 @@
 // clickCount counts the player's amount of clicks
 clickCount = 0
 
+//matching cards count
+matchCount = 0
+
 //firstCatCard is the div of the first card clicked (initialized as null)
 let firstCatCard = null
 
@@ -34,12 +37,32 @@ function renderGame() {
     //code here
 }
 
+//wonGame
+
+function wonGame() {
+    return matchCount >= 12
+}
+
+function lostGame() {
+    return clickCount >= 15
+}
+
+function isCardFaceUp(card) {
+    return !card.classList.contains('card-back')
+}
+
 const onClick = function (event) {
+    if (lostGame() || wonGame()) {
+        return
+    }
     const card = event.target
+    if (isCardFaceUp(card)) {
+        return
+    }
     //flip the card
     flipCardUp(card)
 
-    //count the clicks
+    //count the clicks and add clicks to button
     clickCount = clickCount + 1
     document.getElementById('clicksButton').innerText = 'Click Count: ' + clickCount
 
@@ -55,26 +78,36 @@ const onClick = function (event) {
 
         //check to see if the cards are a match
         if (firstCat === secondCat) {
-            //if they match do nothing
-            //set match audio
-            matchingAudio.play()
+            //incremement matchCount by 2
+            matchCount += 2
+            console.log(matchCount)
+            if (wonGame()) {
+                //TODO modify DOM
+                document.querySelector('h1').innerText = 'Woohoo! You won!'
+                console.log('you won!')
+                //TODO set winning audio
+            } else {
+                //set match audio
+                // matchingAudio.play()
+            }
+
 
         } else {
             //turn both over if not a match
             setTimeout(flipCardBack, 1000, card)
             setTimeout(flipCardBack, 1000, firstCatCard)
             //set noMatch audio
-            noMatchAudio.play()
+            // noMatchAudio.play()
         }
         //initialize firstCatCard as null again
         firstCatCard = null
 
-        if (clickCount >= 15) {
-            alert('Better luck next time!')
-            document.querySelector('ul').innerText = ''
-            document.querySelector('h4').innerText = ''
-            document.querySelector('h2').innerText = ''
+        if (lostGame()) {
             document.querySelector('h1').innerText = 'Uh-oh! Better luck next time!'
+        }
+
+        if (matchCount === 12) {
+
         }
     }
 }
@@ -90,8 +123,10 @@ const flipCardBack = function (card) {
 //restart game when the Play Again button is clicked
 const playAgain = function () {
     clickCount = 0
-    document.getElementById('clicksButton').innerText = 'Click Count: '
     firstCatCard = 0
+    matchCount = 0
+    document.querySelector('h1').innerText = 'Catscentration'
+    document.getElementById('clicksButton').innerText = 'Click Count: '
     flipCardBack(document.getElementById('card0'))
     flipCardBack(document.getElementById('card1'))
     flipCardBack(document.getElementById('card2'))
