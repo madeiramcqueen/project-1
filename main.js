@@ -31,6 +31,8 @@ const catCards = {
 // AUDIO
 const matchingAudio = new Audio('audio/cardMatchMeow.mp3')
 const noMatchAudio = new Audio('audio/noMatchAww.mp3')
+const winAudio = new Audio('audio/winAudio.mp3')
+const loseAudio = new Audio('audio/loseAudio.mp3')
 
 // FUNCTIONS
 function renderGame() {
@@ -42,7 +44,7 @@ function wonGame() {
 }
 
 function lostGame() {
-    return clickCount >= 40
+    return clickCount >= 25
 }
 
 function isCardFaceUp(card) {
@@ -50,7 +52,6 @@ function isCardFaceUp(card) {
 }
 
 function swapCats(first, second) {
-    console.log(catCards[first], catCards[second])
     const temp = catCards[first]
     catCards[first] = catCards[second]
     catCards[second] = temp
@@ -68,7 +69,7 @@ function shuffleCards() {
         card.classList.remove(cat)
     }
 
-    //TODO shuffle cats **Knuth's method
+    //shuffle cat cards **using Knuth's algorithm
     for (let i = cards.length - 1; i > 1; i--) {
         const first = i
         const second = Math.floor(Math.random() * i)
@@ -115,10 +116,11 @@ const onClick = function (event) {
             //incremement matchCount by 2
             matchCount += 2
             if (wonGame()) {
-                //TODO modify DOM
+                //modify DOM to winner message
                 document.querySelector('h1').innerText = 'Woohoo! You won!'
                 console.log('you won!')
-                //TODO set winning audio
+                //set winning audio
+                winAudio.play()
             } else {
                 //set match audio
                 matchingAudio.play()
@@ -136,6 +138,8 @@ const onClick = function (event) {
     }
     if (lostGame()) {
         document.querySelector('h1').innerText = 'Uh-oh! Better luck next time!'
+        //set lose audio
+        loseAudio.play()
     }
 }
 //flip the card facing up
