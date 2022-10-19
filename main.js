@@ -68,17 +68,14 @@ function shuffleCards() {
         card.classList.remove(cat)
     }
 
-    //TODO shuffle cats
+    //TODO shuffle cats **Knuth's method
     for (let i = cards.length - 1; i > 1; i--) {
         const first = i
         const second = Math.floor(Math.random() * i)
         const firstId = 'card' + first
         const secondId = 'card' + second
-        console.log(firstId, secondId)
         swapCats(firstId, secondId)
     }
-
-
 
     //Add new cat class to all cards
     for (let i = 0; i < cards.length; i++) {
@@ -126,7 +123,6 @@ const onClick = function (event) {
                 //set match audio
                 matchingAudio.play()
             }
-
 
         } else {
             //turn both over if not a match
@@ -185,4 +181,3 @@ cards.forEach(function (card) {
 })
 
 playAgainButton.addEventListener('click', playAgain)
-
