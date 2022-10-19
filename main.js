@@ -12,7 +12,7 @@ let firstCatCard = null
 const cards = document.querySelectorAll('.card')
 const playAgainButton = document.getElementById('play-again')
 
-//catCards object, the key is the card id and the value is the cat
+//catCards object, the key is the card div id and the value is the cat class
 const catCards = {
     card0: 'bengal',
     card1: 'bombay',
@@ -37,18 +37,55 @@ function renderGame() {
     //code here
 }
 
-//wonGame
-
 function wonGame() {
     return matchCount >= 12
 }
 
 function lostGame() {
-    return clickCount >= 15
+    return clickCount >= 40
 }
 
 function isCardFaceUp(card) {
     return !card.classList.contains('card-back')
+}
+
+function swapCats(first, second) {
+    console.log(catCards[first], catCards[second])
+    const temp = catCards[first]
+    catCards[first] = catCards[second]
+    catCards[second] = temp
+}
+
+function shuffleCards() {
+    const gameBoard = document.querySelector('.game-board')
+    const cards = gameBoard.children
+
+    // remove the cat class from all cards
+    for (let i = 0; i < cards.length; i++) {
+        const card = cards[i]
+        //look up the cat id to get the cat class
+        const cat = catCards[card.id]
+        card.classList.remove(cat)
+    }
+
+    //TODO shuffle cats
+    for (let i = cards.length - 1; i >1; i--) {
+        const first = i
+        const second = Math.floor(Math.random() * i)
+        const firstId = 'card' + first
+        const secondId = 'card' + second
+        console.log(firstId, secondId)
+        swapCats(firstId, secondId)
+    }
+
+
+
+    //Add new cat class to all cards
+    for (let i = 0; i < cards.length; i++) {
+        const card = cards[i]
+        const cat = catCards[card.id]
+        card.classList.add(cat)
+    }
 }
 
 const onClick = function (event) {
@@ -88,7 +125,7 @@ const onClick = function (event) {
                 //TODO set winning audio
             } else {
                 //set match audio
-                // matchingAudio.play()
+                matchingAudio.play()
             }
 
 
@@ -97,18 +134,13 @@ const onClick = function (event) {
             setTimeout(flipCardBack, 1000, card)
             setTimeout(flipCardBack, 1000, firstCatCard)
             //set noMatch audio
-            // noMatchAudio.play()
+            noMatchAudio.play()
         }
         //initialize firstCatCard as null again
         firstCatCard = null
-
-        if (lostGame()) {
-            document.querySelector('h1').innerText = 'Uh-oh! Better luck next time!'
-        }
-
-        if (matchCount === 12) {
-
-        }
+    }
+    if (lostGame()) {
+        document.querySelector('h1').innerText = 'Uh-oh! Better luck next time!'
     }
 }
 //flip the card facing up
@@ -123,8 +155,8 @@ const flipCardBack = function (card) {
 //restart game when the Play Again button is clicked
 const playAgain = function () {
     clickCount = 0
-    firstCatCard = 0
     matchCount = 0
+    firstCatCard = null
     document.querySelector('h1').innerText = 'Catscentration'
     document.getElementById('clicksButton').innerText = 'Click Count: '
     flipCardBack(document.getElementById('card0'))
@@ -139,6 +171,7 @@ const playAgain = function () {
     flipCardBack(document.getElementById('card9'))
     flipCardBack(document.getElementById('card10'))
     flipCardBack(document.getElementById('card11'))
+    shuffleCards()
 }
 
 // EVENT LISTENERS
