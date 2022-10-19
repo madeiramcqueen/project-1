@@ -9,7 +9,7 @@ let firstCatCard = null
 const cards = document.querySelectorAll('.card')
 const playAgainButton = document.getElementById('play-again')
 
-//catCards dictionary, the key is the card id and the value is the cat
+//catCards object, the key is the card id and the value is the cat
 const catCards = {
     card0: 'bengal',
     card1: 'bombay',
@@ -70,7 +70,11 @@ const onClick = function (event) {
         firstCatCard = null
 
         if (clickCount >= 15) {
-            alert('Sorry! Try again!')
+            alert('Better luck next time!')
+            document.querySelector('ul').innerText = ''
+            document.querySelector('h4').innerText = ''
+            document.querySelector('h2').innerText = ''
+            document.querySelector('h1').innerText = 'Uh-oh! Better luck next time!'
         }
     }
 }
@@ -109,19 +113,3 @@ cards.forEach(function (card) {
 
 playAgainButton.addEventListener('click', playAgain)
 
-/*STILL NEED TO
-
-function winner() {
-    //code here
-    //add winner audio element
-
-}
-
-function shuffleCards () {
-    //code here
-    .random shuffling, shuffle catCards
-    - remove cat class from all cards
-    - shuffle cat cards
-    - add new cat class to all cards
-}
-*/
