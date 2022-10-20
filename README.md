@@ -23,4 +23,4 @@ Click here to play: https://madeiramcqueen.github.io/project-1/
 2. Click two more cards and continue to find matches.
 3. Press the "Play Again" button if you lose the first round or if you want to play again even if you win.
 
-Good luck!
+Good luck! :cat2:
