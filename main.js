@@ -35,9 +35,6 @@ const winAudio = new Audio('audio/winningAudio.mp3')
 const loseAudio = new Audio('audio/loseAudio.mp3')
 
 // FUNCTIONS
-function renderGame() {
-    //code here
-}
 
 function wonGame() {
     return matchCount >= 12
@@ -152,11 +149,6 @@ function flipCardBack(card) {
     card.classList.add('card-back')
 }
 
-//hide matching cards
-// const hideCard = function (card) {
-//     card.classList.remove('card-back')
-//     card.classList.remove(catCards[card.id])
-// }
 //restart game when the Play Again button is clicked
 function playAgain() {
     clickCount = 0
