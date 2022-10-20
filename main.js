@@ -61,7 +61,7 @@ function shuffleCards() {
         card.classList.remove(cat)
     }
 
-    //shuffle cat cards **using Knuth's algorithm
+    //shuffle cat cards **using Knuth's algorithm so there's no chance of repeats
     for (let i = cards.length - 1; i > 1; i--) {
         const first = i
         const second = Math.floor(Math.random() * i)
@@ -109,13 +109,10 @@ function onClick(event) {
             //incremement matchCount by 2
             matchCount += 2
             if (wonGame()) {
-                //modify DOM to winner message
                 document.querySelector('h1').innerText = 'Woohoo! You won!'
                 console.log('you won!')
-                //set winning audio
                 winAudio.play()
             } else {
-                //set match audio
                 matchingAudio.play()
             }
 
@@ -123,15 +120,14 @@ function onClick(event) {
             //turn both over if not a match
             setTimeout(flipCardBack, 1000, card)
             setTimeout(flipCardBack, 1000, firstCatCard)
-            //set noMatch audio
             noMatchAudio.play()
         }
         //initialize firstCatCard as null again
         firstCatCard = null
     }
+    
     if (lostGame()) {
         document.querySelector('h1').innerText = 'Uh-oh! Better luck next time!'
-        //set lose audio
         loseAudio.play()
     }
 }
