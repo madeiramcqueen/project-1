@@ -31,7 +31,7 @@ const catCards = {
 // AUDIO
 const matchingAudio = new Audio('audio/matchAudio.mp3')
 const noMatchAudio = new Audio('audio/noMatchAudio.mp3')
-const winAudio = new Audio('audio/winAudio.mp3')
+const winAudio = new Audio('audio/winningAudio.mp3')
 const loseAudio = new Audio('audio/loseAudio.mp3')
 
 // FUNCTIONS
