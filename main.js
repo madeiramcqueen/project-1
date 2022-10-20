@@ -1,14 +1,9 @@
-// clickCount counts the player's amount of clicks
+// INITIALIZED COUNTS
 clickCount = 0
-
-//matching cards count
 matchCount = 0
-
-//firstCatCard is the div of the first card clicked (initialized as null)
 let firstCatCard = null
 
 // SELECTED ELEMENTS
-// Cards is an array of card divs, representing the game-board
 const cards = document.querySelectorAll('.card')
 const playAgainButton = document.getElementById('play-again')
 
@@ -82,6 +77,7 @@ function shuffleCards() {
         card.classList.add(cat)
     }
 }
+shuffleCards()
 
 function onClick(event) {
     if (lostGame() || wonGame()) {
