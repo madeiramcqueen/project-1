@@ -24,3 +24,8 @@ Click here to play: https://madeiramcqueen.github.io/project-1/
 3. Press the "Play Again" button if you lose the first round or if you want to play again even if you win.
 
 Good luck! :cat2:
+
+## NEXT STEPS:
+Some things I'd like to add to this game include:
+1. Creating a flip animation for each time a player clicks on a card
+2. Adding much more CSS styling
