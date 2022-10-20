@@ -29,8 +29,8 @@ const catCards = {
 }
 
 // AUDIO
-const matchingAudio = new Audio('audio/cardMatchMeow.mp3')
-const noMatchAudio = new Audio('audio/noMatchAww.mp3')
+const matchingAudio = new Audio('audio/matchAudio.mp3')
+const noMatchAudio = new Audio('audio/noMatchAudio.mp3')
 const winAudio = new Audio('audio/winAudio.mp3')
 const loseAudio = new Audio('audio/loseAudio.mp3')
 
@@ -86,7 +86,7 @@ function shuffleCards() {
     }
 }
 
-const onClick = function (event) {
+function onClick(event) {
     if (lostGame() || wonGame()) {
         return
     }
@@ -143,12 +143,12 @@ const onClick = function (event) {
     }
 }
 //flip the card facing up
-const flipCardUp = function (card) {
+function flipCardUp(card) {
     card.classList.remove('card-back')
 }
 
 //flip the card back over
-const flipCardBack = function (card) {
+function flipCardBack(card) {
     card.classList.add('card-back')
 }
 
@@ -158,7 +158,7 @@ const flipCardBack = function (card) {
 //     card.classList.remove(catCards[card.id])
 // }
 //restart game when the Play Again button is clicked
-const playAgain = function () {
+function playAgain() {
     clickCount = 0
     matchCount = 0
     firstCatCard = null
