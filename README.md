@@ -19,17 +19,19 @@ and Bootstrap
 ## <div align="center"> Game
 Click here to play: https://madeiramcqueen.github.io/project-1/
 
-## <div align="center"> Instructions
+## Instructions
 1. Click two cards. If they match, they will stay flipped up. If they do not match, they will flip back over.
 
 2. Click two more cards and continue to find matches.
 
 3. Click the "Play Again" button if you lose the first round or if you want to play again even if you win.
 
-## <div align="center"> Next Steps:
-<div align="center"> Additional things I'd like to add include:
+## Next Steps:
+Additional things I'd like to add include:
 1. Creating a flip animation for each time a player clicks on a card
 
-2. Adding much more CSS styling
+2. Have matching pairs disappear
+
+3. Add more CSS styling
 
 <div align="center"> Good luck! :cat2:
