@@ -18,6 +18,7 @@ and Bootstrap
 
 ## <div align="center"> Game
 Click here to play: https://madeiramcqueen.github.io/project-1/
+</div>
 
 ## Instructions
 1. Click two cards. If they match, they will stay flipped up. If they do not match, they will flip back over.
@@ -27,7 +28,7 @@ Click here to play: https://madeiramcqueen.github.io/project-1/
 3. Click the "Play Again" button if you lose the first round or if you want to play again even if you win.
 
 ## Next Steps:
-Additional things I'd like to add include:
+**Additional things I'd like to add include:**
 1. Creating a flip animation for each time a player clicks on a card
 
 2. Have matching pairs disappear
