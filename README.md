@@ -8,7 +8,7 @@ I chose to make the classic concentration/memory game but it is cat themed. Beca
 ## Wireframe & Game Screenshot
 ![wireframe](images/wireframe.jpg)
 
-![screenshot](images/catscentration.png)
+![screenshot](images/screenshot.png)
 
 ## **Technologies Used**
 - JavaScript
